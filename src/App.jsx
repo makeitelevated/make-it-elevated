@@ -571,6 +571,7 @@ export default function App() {
 
   const runAudit = async () => {
     setLoading(true);
+    console.log("runAudit called");
     try {
       const messages = image
         ? [{ role: "user", content: [
