@@ -609,9 +609,12 @@ export default function App() {
         body: JSON.stringify({ model: "claude-sonnet-4-20250514", max_tokens: 1000, messages }),
       });
       const data = await res.json();
-      const text = data.content.map(i => i.text || "").join("");
-      const clean = text.replace(/```json|```/g, "").trim();
-      setResult(JSON.parse(clean));
+console.log("API response:", JSON.stringify(data));
+const text = data.content.map(i => i.text || "").join("");
+console.log("Text:", text);
+const clean = text.replace(/```json|```/g, "").trim();
+console.log("Clean:", clean);
+setResult(JSON.parse(clean));
     } catch (err) {
     console.log("API error:", err.message);
     setResult({
