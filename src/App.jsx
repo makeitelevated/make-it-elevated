@@ -613,8 +613,9 @@ export default function App() {
       const clean = text.replace(/```json|```/g, "").trim();
       setResult(JSON.parse(clean));
     } catch (err) {
-      setResult({
-        score: 72,
+    console.log("API error:", err.message);
+    setResult({
+      score: 72,
         scoreLabel: "Getting There",
         summary: "A warm foundation with strong bones that's ready for its elevated moment.",
         observations: [
