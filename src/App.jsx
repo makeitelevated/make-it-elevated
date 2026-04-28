@@ -589,18 +589,8 @@ export default function App() {
   ]
 }` }
           ]}]
-        : : [{ role: "user", content: `You are Elise, an expert interior decorator with refined, elevated taste. Generate a sample room audit as if analyzing a real living room. Pick a random score between 60-90, a unique summary, and 4 specific observations. Return ONLY a JSON object (no markdown, no backticks):
-{
-  "score": <number between 60-90>,
-  "scoreLabel": <"Good Start" | "Getting There" | "Almost Elevated" | "Elevated" | "Perfectly Elevated">,
-  "summary": <one unique elegant sentence describing the room>,
-  "observations": [
-    { "category": "...", "title": "...", "text": "..." },
-    { "category": "...", "title": "...", "text": "..." },
-    { "category": "...", "title": "...", "text": "..." },
-    { "category": "...", "title": "...", "text": "..." }
-  ]
-}` }]
+        : : : [{ role: "user", content: `You are Elise, an expert interior decorator. Generate a creative and unique room audit for a randomly chosen room type (could be a bedroom, kitchen, dining room, home office, or entryway). Give it a completely random score - do not use 72. Return ONLY valid JSON with no markdown, no backticks, no extra text:
+{"score":PICK_A_RANDOM_NUMBER_BETWEEN_61_AND_94,"scoreLabel":"Getting There","summary":"One unique sentence about this specific room.","observations":[{"category":"Lighting","title":"A specific lighting observation","text":"Specific actionable advice about lighting in this room."},{"category":"Layout","title":"A specific layout observation","text":"Specific actionable advice about the layout."},{"category":"Texture","title":"A specific texture observation","text":"Specific actionable advice about texture and materials."},{"category":"Styling","title":"A specific styling observation","text":"Specific actionable advice about styling details."}]}` }]
   "scoreLabel": "Getting There",
   "summary": "A warm foundation with strong bones that's ready for its elevated moment.",
   "observations": [
