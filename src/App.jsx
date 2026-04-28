@@ -589,9 +589,18 @@ export default function App() {
   ]
 }` }
           ]}]
-        : [{ role: "user", content: `You are Elise, an expert interior decorator. Generate a sample room audit as if analyzing a cozy, modern living room. Return ONLY a JSON object (no markdown, no backticks):
+        : : [{ role: "user", content: `You are Elise, an expert interior decorator with refined, elevated taste. Generate a sample room audit as if analyzing a real living room. Pick a random score between 60-90, a unique summary, and 4 specific observations. Return ONLY a JSON object (no markdown, no backticks):
 {
-  "score": 72,
+  "score": <number between 60-90>,
+  "scoreLabel": <"Good Start" | "Getting There" | "Almost Elevated" | "Elevated" | "Perfectly Elevated">,
+  "summary": <one unique elegant sentence describing the room>,
+  "observations": [
+    { "category": "...", "title": "...", "text": "..." },
+    { "category": "...", "title": "...", "text": "..." },
+    { "category": "...", "title": "...", "text": "..." },
+    { "category": "...", "title": "...", "text": "..." }
+  ]
+}` }]
   "scoreLabel": "Getting There",
   "summary": "A warm foundation with strong bones that's ready for its elevated moment.",
   "observations": [
